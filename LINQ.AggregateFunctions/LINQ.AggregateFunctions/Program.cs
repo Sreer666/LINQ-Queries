@@ -66,7 +66,18 @@ namespace LINQ.AggregateFunctions
             var MaxCount = Countries.Max(x => x.Length);
 
             var sumCount = Countries.Sum(x => x.Length);
-            
+
+
+//Aggregate function in LINQ
+            string[] countrieslist = { "India", "Antr", "agg", "AYS" };
+            var Aggregatef = countrieslist.Aggregate((c, d) => c + "," + d);
+            Console.WriteLine("This is 1st Aggreate Function" + "\n" + Aggregatef);
+
+//Aggregate Seed function in LINQ
+            int[] NumList = { 1, 2, 3, 4, 5, 6 };
+            var AggregatefSeed = NumList.Aggregate(10, (a, b) => a + b);
+            Console.WriteLine("This is 1st Aggreate Seed Function" + "\n" + AggregatefSeed);
+
         }
     }
 }
