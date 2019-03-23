@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace LINQ.AggregateFunctions
 {
-    class Program
+    class AggregateFunctions
     {
         static void Main(string[] args)
         {
