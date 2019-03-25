@@ -69,6 +69,7 @@ namespace LINQ.AggregateFunctions
 
 
 //Aggregate function in LINQ
+//How it going to work were c will be india for the first time then d will be ANTR and then looping d untill it satifys
             string[] countrieslist = { "India", "Antr", "agg", "AYS" };
             var Aggregatef = countrieslist.Aggregate((c, d) => c + "," + d);
             Console.WriteLine("This is 1st Aggreate Function" + "\n" + Aggregatef);
