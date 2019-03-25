@@ -46,8 +46,26 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
             projection.ProjectionOperartorsGettingID(employee);
             projection.ProjectionOperartorsGettingEmployeeInfo(employee);
 
+            //SelectMany
+            projection.SlectClauseCheck(employee);
 
+            //SAMPLE Select Many EXAMPLE
+            string[] stringarray =
+                {
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                "1234567890"
 
+            };
+
+            IEnumerable<Char> SelectClause= stringarray.SelectMany(s => s);
+           
+            foreach(var item in SelectClause)
+            {
+                Console.WriteLine(item);
+            }
+
+            //OrderBy
+            projection.orderByClause();
         }
 
 
@@ -74,12 +92,57 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                 }
             }
 
-//SelectMany
+ //SelectMany
 
-            //public void SlectClauseCheck(EmployeeModel employee)
-            //{
-            //    var results = employee.Employees.SelectMany(dep => dep.DepartmentId); 
-            //}
+            public void SlectClauseCheck(EmployeeModel employee)
+            {
+                var results = employee.Employees.Select(dep => dep.DepartmentId);
+                // •SelectMany is for flattening multiple sets into a new set.
+                //•Select is for one - to - one mapping each element in a source set to a new set.
+
+            }
+
+            public void orderByClause()
+            {
+                //Lamda Expresion
+                List<Student> students = Student.GetAllStudentInfo;
+                IOrderedEnumerable<Student> studentsList =students.OrderBy(x => x.Name);
+
+                foreach(var item in studentsList)
+                {
+                    Console.WriteLine(item.Name);
+                }
+
+                //Query Expression
+                Console.WriteLine("Query Expression");
+                var queryx = from student in students
+                             orderby  student.Name
+                             select student;
+
+                foreach(var item in queryx)
+                {
+                    Console.WriteLine(item.Name);
+                }
+
+                //Lamda Expresion Descending Order
+                Console.WriteLine("Lamda Expresion Descending Order");
+                IOrderedEnumerable<Student> stdlist = students.OrderByDescending(x => x.Name);
+                foreach (var item in stdlist)
+                {
+                    Console.WriteLine(item.Name);
+                }
+
+                //Query Expresion Descending Order
+                Console.WriteLine("Query Expresion Descending Order");
+                IOrderedEnumerable<Student> stdlistQuery = from stu in students
+                                                           orderby stu.Name descending
+                                                           select stu;
+                foreach (var item in stdlistQuery)
+                {
+                    Console.WriteLine(item.Name);
+                }
+            }
+
         }
     }
 }
