@@ -66,6 +66,9 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
 
             //OrderBy
             projection.orderByClause();
+
+            //TakeSKip
+            projection.TakeSkip();
         }
 
 
@@ -142,7 +145,43 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                     Console.WriteLine(item.Name);
                 }
             }
+//Take Skip
+            public void TakeSkip()
+            {
+                Console.WriteLine("This is Take Operator");
+                string[] takeskip = new string[] { "USA",  "India", "Austr", "Newzland","UK", "K"};
 
+                IEnumerable<string> vs= takeskip.Take(3);
+                foreach(var item in vs)
+                {
+                    Console.WriteLine(item);
+                }
+
+                Console.WriteLine("This is Skip Operator");
+
+                IEnumerable<string> vSKip = takeskip.Skip(2);
+                foreach(string item in vSKip)
+                {
+                    Console.WriteLine(item);
+                }
+
+                Console.WriteLine("This is Skipwhile Operator");
+                // Here the skipwhile will skip the items and once the length or condtion matches then it will retrun list from there
+                IEnumerable<string> vSKipwhile = takeskip.SkipWhile(x=>x.Length>2);
+                foreach (string item in vSKipwhile)
+                {
+                    Console.WriteLine(item);
+                }
+                Console.WriteLine("This is takeskip Operator");
+                // Here the take while returns only the items until the legth or condtion matches.
+                IEnumerable<string> vtakewhile = takeskip.TakeWhile(x => x.Length > 1);
+                foreach (string item in vtakewhile)
+                {
+                    Console.WriteLine(item);
+                }
+
+
+            }
         }
     }
 }
