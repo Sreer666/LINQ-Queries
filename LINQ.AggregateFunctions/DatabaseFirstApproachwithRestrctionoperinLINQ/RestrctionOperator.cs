@@ -30,7 +30,7 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                 {
                     Console.WriteLine(emp.FirstName + "  " + emp.LastName + "   " + emp.Gender);
                 }
-                //If you want to retrive Index postion 
+//If you want to retrive Index postion 
 
                 var empindex = emplist.Select((EmployeeModel, index) => new { emp1 = EmployeeModel, ind = index });
                 foreach(var item in empindex)
@@ -40,16 +40,16 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
         
 
             }
-            //Projection Operators in Linq 
+ //Projection Operators in Linq 
 
             projection projection = new projection();
             projection.ProjectionOperartorsGettingID(employee);
             projection.ProjectionOperartorsGettingEmployeeInfo(employee);
 
-            //SelectMany
+//SelectMany
             projection.SlectClauseCheck(employee);
 
-            //SAMPLE Select Many EXAMPLE
+ //SAMPLE Select Many EXAMPLE
             string[] stringarray =
                 {
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -64,15 +64,18 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                 Console.WriteLine(item);
             }
 
-            //OrderBy
+//OrderBy
             projection.orderByClause();
 
-            //TakeSKip
+//TakeSKip
             projection.TakeSkip();
-        }
+
+            Pagenation page = new Pagenation();
+            page.PagenationMethod();
+        }// End of Main Method
 
 
-        //Projection Operators in Linq seprate method 
+//Projection Operators in Linq seprate method 
         public class projection
         {
             public void ProjectionOperartorsGettingID(EmployeeModel employee)
@@ -84,6 +87,7 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                     Console.WriteLine(id);
                 }
             }
+
             public void ProjectionOperartorsGettingEmployeeInfo(EmployeeModel employee)
             {
                 var EmployeeInfo = employee.Employees.Select(emp => new { FlName = emp.FirstName + " " + emp.LastName, gender = emp.Gender,
@@ -94,9 +98,7 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                     Console.WriteLine(item.FlName +"     "+ item.gender + "     " +item.AverageMonthlySalary + "     " +item.Bonus);
                 }
             }
-
  //SelectMany
-
             public void SlectClauseCheck(EmployeeModel employee)
             {
                 var results = employee.Employees.Select(dep => dep.DepartmentId);
@@ -104,7 +106,7 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                 //•Select is for one - to - one mapping each element in a source set to a new set.
 
             }
-
+//orderBy
             public void orderByClause()
             {
                 //Lamda Expresion
@@ -179,9 +181,48 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                 {
                     Console.WriteLine(item);
                 }
-
+ ;
 
             }
+        }
+//Pagenation      
+        public class Pagenation
+        {
+            public void PagenationMethod()
+            {
+                Console.WriteLine("This is Pagenation Start");
+                //do
+                //{
+                    List<Student> students = Student.GetAllStudentInfo;
+                    int PageNumber = 0;
+                    Console.WriteLine("Please select the pages between 1to 4");
+                    if (int.TryParse(Console.ReadLine(), out PageNumber))
+                    {
+                        if (PageNumber >= 1 && PageNumber <= 4)
+                        {
+                            int pagesize = 3;
+                            IEnumerable<Student> results = students.Skip((PageNumber - 1) * pagesize).Take(pagesize);
+                            Console.WriteLine("Displaying Page" + PageNumber);
+                            foreach (Student s in results)
+                            {
+                                Console.WriteLine(s.Name + " " + s.StudentId + " " + s.TotalMarks);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please select the pages between 1to 4");
+                    }
+               //var studentslist= students.Select(x => new { FirstName = x.Name, studentsdetails = x.StudentId, totalMarks = x.TotalMarks });
+
+                // foreach(var item in studentslist)
+                // {
+                //     Console.WriteLine(item.FirstName + "   " + item.studentsdetails + "   " + item.totalMarks);
+                // }
+                Console.WriteLine("This is Pagenation End");
+               // } while (1 == 1);
+            }
+
         }
     }
 }
