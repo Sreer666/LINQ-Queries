@@ -77,6 +77,13 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
 
             PageingwithSkipandTakecs pageingwithSkipand = new PageingwithSkipandTakecs();
             pageingwithSkipand.pagingmethod();
+
+
+            Dictionary dictionary = new Dictionary();
+            dictionary.DictionaryMethod();
+
+            Tolookup tolookup = new Tolookup();
+            tolookup.Toolookupmethod();
         }// End of Main Method
 
 
@@ -222,6 +229,50 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                // } while (1 == 1);
             }
 
+        }
+
+
+//Dictionary
+        public class Dictionary
+        {
+            public void DictionaryMethod()
+            {
+                Console.WriteLine("Dictionary Method Starting");
+                List<Student> studentsList = Student.GetAllStudentInfo;
+                //For Dictonary we need to filter based on key value paring and each key should be uniq
+              Dictionary<int, Student> keyValuePairs=  studentsList.ToDictionary(x => x.StudentId);
+
+                foreach(KeyValuePair<int, Student> keyValues in keyValuePairs)
+                {
+                    Console.WriteLine(keyValues.Value.StudentId + "\t" + keyValues.Value.Name + " \t " + keyValues.Value.Name);
+                }
+                Console.WriteLine("Dictionary Method End");
+            }
+        }
+
+//Tolookup
+
+        public class Tolookup
+        {
+            public void Toolookupmethod()
+            {
+                Console.WriteLine("Toolookupmethod Starting");
+                List<Student> studentsList = Student.GetAllStudentInfo;
+
+                var keyValuePairs = studentsList.ToLookup(x => x.TotalMarks);
+
+                //Console.WriteLine(keyValuePairs);
+                foreach (var keys in keyValuePairs)
+                {
+                    Console.WriteLine(keys.Key);
+                    foreach (var keyValues in keyValuePairs[keys.Key])
+                    {
+                        Console.WriteLine(keyValues.Name + "\t" + keyValues.Name + "\t" + keyValues.TotalMarks);
+                    }
+                }
+
+                Console.WriteLine("Toolookupmethod End");
+            }
         }
     }
 }
