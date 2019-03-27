@@ -70,8 +70,13 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
 //TakeSKip
             projection.TakeSkip();
 
-            Pagenation page = new Pagenation();
-            page.PagenationMethod();
+            //Pagenation page = new Pagenation();
+            //page.PagenationMethod();
+
+            // New paging
+
+            PageingwithSkipandTakecs pageingwithSkipand = new PageingwithSkipandTakecs();
+            pageingwithSkipand.pagingmethod();
         }// End of Main Method
 
 
@@ -213,12 +218,6 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                     {
                         Console.WriteLine("Please select the pages between 1to 4");
                     }
-               //var studentslist= students.Select(x => new { FirstName = x.Name, studentsdetails = x.StudentId, totalMarks = x.TotalMarks });
-
-                // foreach(var item in studentslist)
-                // {
-                //     Console.WriteLine(item.FirstName + "   " + item.studentsdetails + "   " + item.totalMarks);
-                // }
                 Console.WriteLine("This is Pagenation End");
                // } while (1 == 1);
             }
