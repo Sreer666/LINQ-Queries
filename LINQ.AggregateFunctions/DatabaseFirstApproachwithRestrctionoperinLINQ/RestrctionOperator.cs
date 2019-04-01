@@ -301,11 +301,11 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                     Console.WriteLine(item);
                 }
             }
- //OfType: It will Cast any data type
+ //OfType: It will Cast Specif data type which we want to itterate
             public void OverOfTypeMethod()
             {
-//Cast: It will only cast the values for same elements and error wont show Meaning it wont throw error
-             ArrayList vs = new ArrayList();
+//OfType : It will only retrun the specifed type and the rest of the items will be ignored and exclude the results
+                ArrayList vs = new ArrayList();
                 vs.Add(1);
                 vs.Add(2);
                 vs.Add(3);

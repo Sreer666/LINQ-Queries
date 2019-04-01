@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/LINQ.AggregateFunctions/DatabaseFirstApproachwithRestrctionoperinLINQ/bin/Debug
+/LINQ.AggregateFunctions/DatabaseFirstApproachwithRestrctionoperinLINQ/obj/Debug
+/LINQ.AggregateFunctions/.vs
+/LINQ.AggregateFunctions/LINQ.AggregateFunctions
+/LINQ.AggregateFunctions/SQLQuery1.sql

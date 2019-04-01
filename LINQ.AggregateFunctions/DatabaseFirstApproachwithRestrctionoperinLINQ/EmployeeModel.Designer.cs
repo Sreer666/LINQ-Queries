@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\sreer\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\DatabaseFirstApproachwithRestrctionoperinLINQ\EmployeeModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\DatabaseFirstApproachwithRestrctionoperinLINQ\EmployeeModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
