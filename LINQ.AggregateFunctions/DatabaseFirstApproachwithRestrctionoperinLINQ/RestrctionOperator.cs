@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -84,6 +85,10 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
 
             Tolookup tolookup = new Tolookup();
             tolookup.Toolookupmethod();
+
+            CastOverOfType castOverOfType = new CastOverOfType();
+            castOverOfType.CastOverOfTypeMethod();
+            castOverOfType.OverOfTypeMethod();
         }// End of Main Method
 
 
@@ -272,6 +277,49 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                 }
 
                 Console.WriteLine("Toolookupmethod End");
+            }
+        }
+
+
+//CastOverOfType
+
+        public class CastOverOfType
+        {
+           public void CastOverOfTypeMethod()
+            {
+//Cast: It will only cast the values for same elements if you try to add any other differnt datatype then error will be thrown
+                List<int> vs = new List<int>();
+                int i = 1;
+                int j = 1;
+                int k = 1;
+                vs.Add(i);
+                vs.Add(j);
+                vs.Add(k);
+                IEnumerable<int> listvs = vs.Cast<int>();
+                foreach(var item in listvs)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+ //OfType: It will Cast any data type
+            public void OverOfTypeMethod()
+            {
+//Cast: It will only cast the values for same elements and error wont show Meaning it wont throw error
+             ArrayList vs = new ArrayList();
+                vs.Add(1);
+                vs.Add(2);
+                vs.Add(3);
+                vs.Add("whats your name");
+                IEnumerable<int> listvs = vs.OfType<int>();
+                foreach(var item in listvs)
+                {
+                    Console.WriteLine(item);
+                }
+                IEnumerable<string> listvsstring = vs.OfType<string>();
+                foreach(var item in listvsstring)
+                {
+                    Console.WriteLine(item);
+                }
             }
         }
     }
