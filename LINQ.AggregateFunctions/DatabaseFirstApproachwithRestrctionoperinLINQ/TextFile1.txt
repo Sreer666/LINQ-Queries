@@ -1,0 +1,17 @@
+﻿Notes:
+
+Linq Operators execution behaviour:
+
+What are defferd operators or Lazy Operators and what are immediate operators or greddy operators when to use each other?
+
+So Defferd Operators or Lazy Operators
+
+The select, where, take skip etc.... this kind of operators will be considers like Defferd Operators
+Coz at the time of execution it will load the data and execute the condtion when we itterate it.
+
+
+For Immediate or Greddy Operators :
+
+The Tolist(), count, average, min, max etc....... this kind of operators will be considers like Immediate or Greddy operators,
+Coz at run time or time of execution it will execute the condtion immediatly and will give the results
+

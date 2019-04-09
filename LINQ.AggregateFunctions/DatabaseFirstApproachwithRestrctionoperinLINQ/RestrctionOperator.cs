@@ -322,5 +322,11 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                 }
             }
         }
+
+       // AsEnumerable and AsQueryable in LINQ
+       //If you want to do query in client side then you should go for this execution
+
+
+
     }
 }

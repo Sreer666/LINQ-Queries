@@ -99,6 +99,7 @@
       <DependentUpon>EmployeeModel.edmx</DependentUpon>
       <LastGenOutput>EmployeeModel.cs</LastGenOutput>
     </Content>
+    <Content Include="TextFile1.txt" />
     <None Include="QueryForDepartmentandEmployee.sql" />
   </ItemGroup>
   <ItemGroup>
