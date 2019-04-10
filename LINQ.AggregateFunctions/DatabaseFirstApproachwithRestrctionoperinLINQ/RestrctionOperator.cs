@@ -89,6 +89,10 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
             CastOverOfType castOverOfType = new CastOverOfType();
             castOverOfType.CastOverOfTypeMethod();
             castOverOfType.OverOfTypeMethod();
+
+            //Groupby
+            Grouby grouby = new Grouby();
+            grouby.groupbymethod();
         }// End of Main Method
 
 
@@ -326,6 +330,37 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
        // AsEnumerable and AsQueryable in LINQ
        //If you want to do query in client side then you should go for this execution
 
+
+
+        //GroupBy
+        
+        public class Grouby
+        {
+            public void groupbymethod()
+            {
+                Console.WriteLine("GroupBy");
+                var stud = Student.GetAllStudentInfo.GroupBy(x => x.TotalMarks);
+                foreach(var item in stud)
+                {
+                    Console.WriteLine(item.Key, item.Count());
+                }
+                //Need to work on groupby clause  for sorting 
+
+                EmployeeModel employee = new EmployeeModel();
+                var departments = employee.Departments.Where(dep => dep.Name == "IT" || dep.Name == "HR").OrderBy(x=>x.Name);
+
+                from emp in employee.Departments
+                group emp by employee.Departments into empgroup orderby empgroup.Key select (x=> new { x= })
+
+                foreach (var item in departments)
+                {
+                    Console.WriteLine(item.Name + "       " + item.ID);
+                }
+            }
+
+          
+
+        }
 
 
     }
