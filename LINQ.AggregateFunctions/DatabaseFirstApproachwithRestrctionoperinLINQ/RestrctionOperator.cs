@@ -93,6 +93,9 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
             //Groupby
             Grouby grouby = new Grouby();
             grouby.groupbymethod();
+
+            GroupByMutiple groupByMutiple = new GroupByMutiple();
+            groupByMutiple.groupbymethod();
         }// End of Main Method
 
 
@@ -349,8 +352,12 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                 EmployeeModel employee = new EmployeeModel();
                 var departments = employee.Departments.Where(dep => dep.Name == "IT" || dep.Name == "HR").OrderBy(x=>x.Name);
 
-                from emp in employee.Departments
-                group emp by employee.Departments into empgroup orderby empgroup.Key select (x=> new { x= })
+                //from emp in employee.Departments
+                //group emp by employee.Departments into empgroup orderby empgroup.Key
+                //select (x=> new
+                //{ 
+
+                //})
 
                 foreach (var item in departments)
                 {
@@ -362,6 +369,30 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
 
         }
 
+        public class GroupByMutiple
+        {
+            public void groupbymethod()
+            {
+                var emp = Employee1.GetEmployees().GroupBy(x => new { x.Department, x.Gender })
+                 .OrderBy(x => x.Key.Department).ThenBy(x => x.Key.Gender)
+                 .Select(x => new
+                 {
+                     department = x.Key.Department,
+                     gender = x.Key.Gender,
+                     Empinfo = x.OrderBy(y => y.Name)
+                 });
+                foreach(var group in emp)
+                {
+                    Console.WriteLine("Department{0} gender {1} employee count {2}", group.department, group.gender, group.Empinfo.Count());
+                    Console.WriteLine("------------------------------------");
+                    foreach(var item in group.Empinfo)
+                    {
+                        Console.WriteLine(item.ID + "\t" + item.Name + "\t" + item.Salary);
+                    }
+                }
+
+            }
+        }
 
     }
 }
