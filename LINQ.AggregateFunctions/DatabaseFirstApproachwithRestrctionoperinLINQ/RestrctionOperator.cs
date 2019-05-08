@@ -373,6 +373,7 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
         {
             public void groupbymethod()
             {
+                //An anonymous type is usually used when we want to group by mutiple keys.
                 var emp = Employee1.GetEmployees().GroupBy(x => new { x.Department, x.Gender })
                  .OrderBy(x => x.Key.Department).ThenBy(x => x.Key.Gender)
                  .Select(x => new
@@ -383,7 +384,7 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
                  });
                 foreach(var group in emp)
                 {
-                    Console.WriteLine("Department{0} gender {1} employee count {2}", group.department, group.gender, group.Empinfo.Count());
+                    Console.WriteLine("Department {0} gender {1} employee count {2}", group.department, group.gender, group.Empinfo.Count());
                     Console.WriteLine("------------------------------------");
                     foreach(var item in group.Empinfo)
                     {
@@ -393,6 +394,23 @@ namespace DatabaseFirstApproachwithRestrctionoperinLINQ
 
             }
         }
+        //Need to write
+        // FIrst(there will be 2 overload versions)one to write  for predicate function
+        //Ans:When you know that result contain more than 1 element expected and you should only get the first element of sequence.
+        //if sequence does not contain any element then it will throw tht error.
+        //Even the same follows for Predicate function example .First(x=>x%2==0) this should retrun only the even numbers values if there is no matching then it will throw null execption
+
+
+        //First or default
+        //Ans: FirstOrDefault()  is just like First() except that, if no element match the specified condition than it returns default value of underlying type 
+        //of generic collection. It does not throw InvalidOperationException if no element found. 
+        //But collection of element or a sequence is null than it throws an exception.
+
+
+        //last
+        //last or default
+        //ElemenetAt()
+        //Single(there will be 2 overload versions)one to write  for predicate function
 
     }
 }
