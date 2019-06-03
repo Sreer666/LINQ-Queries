@@ -16,8 +16,8 @@ namespace SetUp_OracleDb
 
             //Demo: Basic ODP.NET Core application for ASP.NET
             // to connect, query, and return results to a web page.
-            string ConnectionStrings = "Data Source=FAC5Q;Persist Security Info=True;" + "User ID=AG22649;Password=NaBondha5!";
 
+            string ConnectionStrings = "";
 
             //How to connect to an Oracle DB with a DB alias.
             //Uncomment below and comment above.
