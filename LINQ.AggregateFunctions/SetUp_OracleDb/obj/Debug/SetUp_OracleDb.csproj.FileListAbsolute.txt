@@ -1,0 +1,12 @@
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\bin\Debug\SetUp_OracleDb.exe.config
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\bin\Debug\SetUp_OracleDb.exe
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\bin\Debug\SetUp_OracleDb.pdb
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\bin\Debug\Dapper.dll
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\bin\Debug\Dapper.xml
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\obj\Debug\SetUp_OracleDb.csprojAssemblyReference.cache
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\obj\Debug\SetUp_OracleDb.csproj.CoreCompileInputs.cache
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\obj\Debug\SetUp_OracleDb.csproj.CopyComplete
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\obj\Debug\SetUp_OracleDb.exe
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\obj\Debug\SetUp_OracleDb.pdb
+C:\Users\AG22649\Source\Repos\LINQ-Queries\LINQ.AggregateFunctions\SetUp_OracleDb\bin\Debug\Oracle.DataAccess.dll

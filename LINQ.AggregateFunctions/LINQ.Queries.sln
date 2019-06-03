@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ.AggregateFunctions", "LINQ.AggregateFunctions\LINQ.AggregateFunctions.csproj", "{CDD87A1B-8BD0-4E70-A8F6-14C204B143F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirstApproachwithRestrctionoperinLINQ", "DatabaseFirstApproachwithRestrctionoperinLINQ\DatabaseFirstApproachwithRestrctionoperinLINQ.csproj", "{2B39F596-161D-4113-A7A6-0E0E2543FE69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetUp_OracleDb", "SetUp_OracleDb\SetUp_OracleDb.csproj", "{65CA70A2-125D-4CC9-A2E5-E505C7D81A66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2B39F596-161D-4113-A7A6-0E0E2543FE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B39F596-161D-4113-A7A6-0E0E2543FE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B39F596-161D-4113-A7A6-0E0E2543FE69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65CA70A2-125D-4CC9-A2E5-E505C7D81A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65CA70A2-125D-4CC9-A2E5-E505C7D81A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65CA70A2-125D-4CC9-A2E5-E505C7D81A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65CA70A2-125D-4CC9-A2E5-E505C7D81A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
